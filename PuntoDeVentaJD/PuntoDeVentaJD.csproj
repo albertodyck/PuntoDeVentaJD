@@ -104,5 +104,8 @@
   <ItemGroup>
     <None Include="Resources\iconfinder_search_magnifying_glass_find_103857.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_payment_1954199.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
