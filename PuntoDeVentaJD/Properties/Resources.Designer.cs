@@ -89,5 +89,25 @@ namespace PuntoDeVentaJD.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_search_magnifying_glass_find_103857 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_search_magnifying_glass_find_103857", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_carniceria_jj {
+            get {
+                object obj = ResourceManager.GetObject("logo-carniceria jj", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

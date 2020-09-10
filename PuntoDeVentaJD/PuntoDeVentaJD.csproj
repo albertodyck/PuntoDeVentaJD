@@ -98,5 +98,11 @@
   <ItemGroup>
     <None Include="Resources\iconfinder_revisi_02_2191544.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-carniceria jj.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_search_magnifying_glass_find_103857.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
