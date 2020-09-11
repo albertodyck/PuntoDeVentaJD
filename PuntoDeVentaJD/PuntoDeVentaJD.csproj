@@ -107,5 +107,14 @@
   <ItemGroup>
     <None Include="Resources\iconfinder_payment_1954199.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_Save_1493294.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_free-27_616650 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_minus_1645995 %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

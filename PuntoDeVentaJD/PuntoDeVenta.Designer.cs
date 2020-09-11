@@ -49,15 +49,20 @@
             this.Existencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonPagar = new System.Windows.Forms.Button();
-            this.buttonBuscar = new System.Windows.Forms.Button();
-            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.labelIVA = new System.Windows.Forms.Label();
             this.labelTotal = new System.Windows.Forms.Label();
             this.textBoxTotal = new System.Windows.Forms.TextBox();
             this.textBoxIVA = new System.Windows.Forms.TextBox();
             this.labelPago = new System.Windows.Forms.Label();
             this.textBoxPago = new System.Windows.Forms.TextBox();
+            this.labelCambio = new System.Windows.Forms.Label();
+            this.textBoxCambio = new System.Windows.Forms.TextBox();
+            this.buttonCancelarArticulo = new System.Windows.Forms.Button();
+            this.buttonEliminarVenta = new System.Windows.Forms.Button();
+            this.buttonGuardarVenta = new System.Windows.Forms.Button();
+            this.buttonPagar = new System.Windows.Forms.Button();
+            this.buttonBuscar = new System.Windows.Forms.Button();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -241,6 +246,139 @@
             this.Total.Name = "Total";
             this.Total.ReadOnly = true;
             // 
+            // labelIVA
+            // 
+            this.labelIVA.AutoSize = true;
+            this.labelIVA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIVA.ForeColor = System.Drawing.Color.Blue;
+            this.labelIVA.Location = new System.Drawing.Point(999, 501);
+            this.labelIVA.Name = "labelIVA";
+            this.labelIVA.Size = new System.Drawing.Size(44, 16);
+            this.labelIVA.TabIndex = 11;
+            this.labelIVA.Text = "I.V.A:";
+            // 
+            // labelTotal
+            // 
+            this.labelTotal.AutoSize = true;
+            this.labelTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotal.ForeColor = System.Drawing.Color.Blue;
+            this.labelTotal.Location = new System.Drawing.Point(971, 550);
+            this.labelTotal.Name = "labelTotal";
+            this.labelTotal.Size = new System.Drawing.Size(72, 25);
+            this.labelTotal.TabIndex = 12;
+            this.labelTotal.Text = "Total:";
+            // 
+            // textBoxTotal
+            // 
+            this.textBoxTotal.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.textBoxTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTotal.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.textBoxTotal.Location = new System.Drawing.Point(1049, 544);
+            this.textBoxTotal.Name = "textBoxTotal";
+            this.textBoxTotal.Size = new System.Drawing.Size(180, 44);
+            this.textBoxTotal.TabIndex = 13;
+            this.textBoxTotal.Text = "$55.00";
+            // 
+            // textBoxIVA
+            // 
+            this.textBoxIVA.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.textBoxIVA.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIVA.Location = new System.Drawing.Point(1049, 486);
+            this.textBoxIVA.Name = "textBoxIVA";
+            this.textBoxIVA.Size = new System.Drawing.Size(150, 31);
+            this.textBoxIVA.TabIndex = 14;
+            this.textBoxIVA.Text = "$7.58";
+            // 
+            // labelPago
+            // 
+            this.labelPago.AutoSize = true;
+            this.labelPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPago.ForeColor = System.Drawing.Color.Blue;
+            this.labelPago.Location = new System.Drawing.Point(645, 50);
+            this.labelPago.Name = "labelPago";
+            this.labelPago.Size = new System.Drawing.Size(78, 16);
+            this.labelPago.TabIndex = 15;
+            this.labelPago.Text = "Paga con:";
+            this.labelPago.Visible = false;
+            // 
+            // textBoxPago
+            // 
+            this.textBoxPago.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.textBoxPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPago.Location = new System.Drawing.Point(648, 70);
+            this.textBoxPago.Name = "textBoxPago";
+            this.textBoxPago.Size = new System.Drawing.Size(100, 31);
+            this.textBoxPago.TabIndex = 5;
+            this.textBoxPago.Visible = false;
+            this.textBoxPago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPago_KeyPress);
+            // 
+            // labelCambio
+            // 
+            this.labelCambio.AutoSize = true;
+            this.labelCambio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCambio.ForeColor = System.Drawing.Color.Blue;
+            this.labelCambio.Location = new System.Drawing.Point(764, 38);
+            this.labelCambio.Name = "labelCambio";
+            this.labelCambio.Size = new System.Drawing.Size(65, 16);
+            this.labelCambio.TabIndex = 16;
+            this.labelCambio.Text = "Cambio:";
+            this.labelCambio.Visible = false;
+            // 
+            // textBoxCambio
+            // 
+            this.textBoxCambio.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.textBoxCambio.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCambio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.textBoxCambio.Location = new System.Drawing.Point(767, 57);
+            this.textBoxCambio.Name = "textBoxCambio";
+            this.textBoxCambio.Size = new System.Drawing.Size(150, 44);
+            this.textBoxCambio.TabIndex = 17;
+            this.textBoxCambio.Text = "$445.00";
+            this.textBoxCambio.Visible = false;
+            // 
+            // buttonCancelarArticulo
+            // 
+            this.buttonCancelarArticulo.BackgroundImage = global::PuntoDeVentaJD.Properties.Resources.iconfinder_minus_1645995__1_;
+            this.buttonCancelarArticulo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonCancelarArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancelarArticulo.ForeColor = System.Drawing.Color.Yellow;
+            this.buttonCancelarArticulo.Location = new System.Drawing.Point(210, 486);
+            this.buttonCancelarArticulo.Name = "buttonCancelarArticulo";
+            this.buttonCancelarArticulo.Size = new System.Drawing.Size(65, 85);
+            this.buttonCancelarArticulo.TabIndex = 20;
+            this.buttonCancelarArticulo.Text = "Cancelar Articulo";
+            this.buttonCancelarArticulo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonCancelarArticulo.UseVisualStyleBackColor = true;
+            // 
+            // buttonEliminarVenta
+            // 
+            this.buttonEliminarVenta.BackgroundImage = global::PuntoDeVentaJD.Properties.Resources.iconfinder_free_27_616650__1_;
+            this.buttonEliminarVenta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonEliminarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEliminarVenta.ForeColor = System.Drawing.Color.Red;
+            this.buttonEliminarVenta.Location = new System.Drawing.Point(113, 486);
+            this.buttonEliminarVenta.Name = "buttonEliminarVenta";
+            this.buttonEliminarVenta.Size = new System.Drawing.Size(65, 85);
+            this.buttonEliminarVenta.TabIndex = 19;
+            this.buttonEliminarVenta.Text = "Eliminar";
+            this.buttonEliminarVenta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonEliminarVenta.UseVisualStyleBackColor = true;
+            // 
+            // buttonGuardarVenta
+            // 
+            this.buttonGuardarVenta.BackgroundImage = global::PuntoDeVentaJD.Properties.Resources.iconfinder_Save_1493294;
+            this.buttonGuardarVenta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonGuardarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonGuardarVenta.ForeColor = System.Drawing.Color.SeaGreen;
+            this.buttonGuardarVenta.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.buttonGuardarVenta.Location = new System.Drawing.Point(13, 486);
+            this.buttonGuardarVenta.Name = "buttonGuardarVenta";
+            this.buttonGuardarVenta.Size = new System.Drawing.Size(65, 85);
+            this.buttonGuardarVenta.TabIndex = 18;
+            this.buttonGuardarVenta.Text = "Guardar";
+            this.buttonGuardarVenta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonGuardarVenta.UseVisualStyleBackColor = true;
+            // 
             // buttonPagar
             // 
             this.buttonPagar.BackgroundImage = global::PuntoDeVentaJD.Properties.Resources.iconfinder_payment_1954199;
@@ -281,76 +419,17 @@
             this.pictureBoxLogo.TabIndex = 0;
             this.pictureBoxLogo.TabStop = false;
             // 
-            // labelIVA
-            // 
-            this.labelIVA.AutoSize = true;
-            this.labelIVA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIVA.ForeColor = System.Drawing.Color.Blue;
-            this.labelIVA.Location = new System.Drawing.Point(999, 501);
-            this.labelIVA.Name = "labelIVA";
-            this.labelIVA.Size = new System.Drawing.Size(44, 16);
-            this.labelIVA.TabIndex = 11;
-            this.labelIVA.Text = "I.V.A:";
-            // 
-            // labelTotal
-            // 
-            this.labelTotal.AutoSize = true;
-            this.labelTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotal.ForeColor = System.Drawing.Color.Blue;
-            this.labelTotal.Location = new System.Drawing.Point(971, 550);
-            this.labelTotal.Name = "labelTotal";
-            this.labelTotal.Size = new System.Drawing.Size(72, 25);
-            this.labelTotal.TabIndex = 12;
-            this.labelTotal.Text = "Total:";
-            // 
-            // textBoxTotal
-            // 
-            this.textBoxTotal.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.textBoxTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTotal.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.textBoxTotal.Location = new System.Drawing.Point(1049, 544);
-            this.textBoxTotal.Name = "textBoxTotal";
-            this.textBoxTotal.Size = new System.Drawing.Size(150, 44);
-            this.textBoxTotal.TabIndex = 13;
-            // 
-            // textBoxIVA
-            // 
-            this.textBoxIVA.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.textBoxIVA.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxIVA.Location = new System.Drawing.Point(1049, 486);
-            this.textBoxIVA.Name = "textBoxIVA";
-            this.textBoxIVA.Size = new System.Drawing.Size(150, 31);
-            this.textBoxIVA.TabIndex = 14;
-            // 
-            // labelPago
-            // 
-            this.labelPago.AutoSize = true;
-            this.labelPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPago.ForeColor = System.Drawing.Color.Blue;
-            this.labelPago.Location = new System.Drawing.Point(645, 50);
-            this.labelPago.Name = "labelPago";
-            this.labelPago.Size = new System.Drawing.Size(78, 16);
-            this.labelPago.TabIndex = 15;
-            this.labelPago.Text = "Paga con:";
-            this.labelPago.Visible = false;
-            // 
-            // textBoxPago
-            // 
-            this.textBoxPago.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.textBoxPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPago.Location = new System.Drawing.Point(648, 70);
-            this.textBoxPago.Name = "textBoxPago";
-            this.textBoxPago.Size = new System.Drawing.Size(100, 31);
-            this.textBoxPago.TabIndex = 5;
-            this.textBoxPago.Visible = false;
-            this.textBoxPago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPago_KeyPress);
-            // 
             // PuntoDeVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1226, 588);
+            this.Controls.Add(this.buttonCancelarArticulo);
+            this.Controls.Add(this.buttonEliminarVenta);
+            this.Controls.Add(this.buttonGuardarVenta);
+            this.Controls.Add(this.textBoxCambio);
+            this.Controls.Add(this.labelCambio);
             this.Controls.Add(this.textBoxPago);
             this.Controls.Add(this.labelPago);
             this.Controls.Add(this.textBoxIVA);
@@ -410,5 +489,10 @@
         private System.Windows.Forms.TextBox textBoxIVA;
         private System.Windows.Forms.Label labelPago;
         private System.Windows.Forms.TextBox textBoxPago;
+        private System.Windows.Forms.Label labelCambio;
+        private System.Windows.Forms.TextBox textBoxCambio;
+        private System.Windows.Forms.Button buttonGuardarVenta;
+        private System.Windows.Forms.Button buttonEliminarVenta;
+        private System.Windows.Forms.Button buttonCancelarArticulo;
     }
 }

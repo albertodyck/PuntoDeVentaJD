@@ -19,8 +19,8 @@ namespace PuntoDeVentaJD
 
         private void PuntoDeVenta_Load(object sender, EventArgs e)
         {
-            labelPago.Visible = false;
-            textBoxPago.Visible = false;
+            Invisibles();
+            //diseño superior al datagrid
             panelTitulo.Width = this.Width - 100;
             labelTitulo.Location = new Point((this.Width / 2) - (labelTitulo.Width / 2) - 50, 0);
             labelFechaHora.Location = new Point(this.Width - labelFechaHora.Width - 20, panelTitulo.Height + 3);
@@ -33,11 +33,18 @@ namespace PuntoDeVentaJD
             buttonPagar.Location = new Point(pictureBoxLogo.Width + 50 + textBoxCodigo.Width + 25 + buttonBuscar.Width + 25 + textBoxCantidad.Width + 25, panelTitulo.Height + 3);
             labelPago.Location = new Point(pictureBoxLogo.Width + 50 + textBoxCodigo.Width + 25 + buttonBuscar.Width + 25 + textBoxCantidad.Width + 25 + buttonPagar.Width + 25, panelTitulo.Height + 23);
             textBoxPago.Location = new Point(pictureBoxLogo.Width + 50 + textBoxCodigo.Width + 25 + buttonBuscar.Width + 25 + textBoxCantidad.Width + 25 + buttonPagar.Width + 25, panelTitulo.Height + 23 + labelPago.Height);
+            textBoxCambio.Location = new Point(pictureBoxLogo.Width + 50 + textBoxCodigo.Width + 25 + buttonBuscar.Width + 25 + textBoxCantidad.Width + 25 + buttonPagar.Width + 25 + textBoxPago.Width + 25, panelTitulo.Height + 23 + labelCambio.Height);
+            labelCambio.Location = new Point(pictureBoxLogo.Width + 50 + textBoxCodigo.Width + 25 + buttonBuscar.Width + 25 + textBoxCantidad.Width + 25 + buttonPagar.Width + 25 + textBoxPago.Width + 25, panelTitulo.Height + 23);
 
+            //diseño inferior al datagrid
             textBoxTotal.Location = new Point(this.Width - 20 - textBoxTotal.Width, this.Height - 60 - textBoxTotal.Height);
             labelTotal.Location = new Point(this.Width - 20 - textBoxTotal.Width - labelTotal.Width, this.Height - 60 - textBoxTotal.Height);
             textBoxIVA.Location = new Point(this.Width - 20 - textBoxIVA.Width, this.Height - 60 - textBoxTotal.Height - textBoxIVA.Height-20);
             labelIVA.Location = new Point(this.Width - 20 - textBoxIVA.Width - labelIVA.Width, this.Height - 60 - textBoxTotal.Height - textBoxIVA.Height-20);
+            buttonGuardarVenta.Location = new Point(10, this.Height - 60 - buttonGuardarVenta.Height);
+            buttonEliminarVenta.Location = new Point(10 + buttonGuardarVenta.Width + 25, this.Height - 60 - buttonEliminarVenta.Height);
+            buttonCancelarArticulo.Location = new Point(10 + buttonGuardarVenta.Width + 25 + buttonEliminarVenta.Width +25, this.Height - 60 - buttonCancelarArticulo.Height);
+
 
             //formato de datagrid
             dataGridView1.Location = new Point(10, pictureBoxLogo.Height + 20);
@@ -114,19 +121,31 @@ namespace PuntoDeVentaJD
             {
                 e.Handled = false;
             }
+            else if (true)
+            {
+                textBoxCambio.Visible = true;
+                labelCambio.Visible = true;
+                textBoxCambio.Focus();
+            }
             else
             {
                 e.Handled = true;
             }
         }
 
-        #region funcion borrar cuadros de texto
+        #region funcion limpiar cuadros de texto
         private void BorrarTexto(TextBox textbox)
         {
             textbox.Text = "";
         }
-
-
         #endregion
+
+        private void Invisibles()
+        {
+            labelPago.Visible = false;
+            textBoxPago.Visible = false;
+            textBoxCambio.Visible = false;
+            labelCambio.Visible = false;
+        }
     }
 }

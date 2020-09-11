@@ -73,9 +73,29 @@ namespace PuntoDeVentaJD.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_free_27_616650__1_ {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_free-27_616650 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconfinder_key_309058 {
             get {
                 object obj = ResourceManager.GetObject("iconfinder_key_309058", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_minus_1645995__1_ {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_minus_1645995 (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -96,6 +116,16 @@ namespace PuntoDeVentaJD.Properties {
         internal static System.Drawing.Bitmap iconfinder_revisi_02_2191544 {
             get {
                 object obj = ResourceManager.GetObject("iconfinder_revisi_02_2191544", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_Save_1493294 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_Save_1493294", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
