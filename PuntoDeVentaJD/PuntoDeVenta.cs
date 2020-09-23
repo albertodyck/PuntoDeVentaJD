@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace PuntoDeVentaJD
 {
     public partial class PuntoDeVenta : Form
     {
+        float total = 0;
+        float IVA = 0;
+       
         public PuntoDeVenta()
         {
             InitializeComponent();
@@ -44,7 +48,9 @@ namespace PuntoDeVentaJD
             buttonGuardarVenta.Location = new Point(10, this.Height - 60 - buttonGuardarVenta.Height);
             buttonEliminarVenta.Location = new Point(10 + buttonGuardarVenta.Width + 25, this.Height - 60 - buttonEliminarVenta.Height);
             buttonCancelarArticulo.Location = new Point(10 + buttonGuardarVenta.Width + 25 + buttonEliminarVenta.Width +25, this.Height - 60 - buttonCancelarArticulo.Height);
-
+            textBoxCaptura.Location = new Point(10 + buttonGuardarVenta.Width + 25 + buttonEliminarVenta.Width + 25 +buttonCancelarArticulo.Width + 25, this.Height - 60 - textBoxCaptura.Height);
+            textBoxCaptura.Focus();
+            textBoxCaptura.Width = (this.Width-20) - (75 + buttonGuardarVenta.Width + buttonEliminarVenta.Width + buttonCancelarArticulo.Width + textBoxTotal.Width + labelTotal.Width + 25);
 
             //formato de datagrid
             dataGridView1.Location = new Point(10, pictureBoxLogo.Height + 20);
@@ -144,8 +150,109 @@ namespace PuntoDeVentaJD
         {
             labelPago.Visible = false;
             textBoxPago.Visible = false;
+            textBoxPago.Clear();
             textBoxCambio.Visible = false;
+            textBoxCambio.Clear();
             labelCambio.Visible = false;
+            textBoxIVA.Clear();
+            textBoxTotal.Clear();
+            textBoxCantidad.Clear();
+            textBoxCodigo.Clear();
+
+        }
+
+        private void textBoxCaptura_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string query;
+            string cantidad;
+            string codigo;
+
+            if (e.KeyChar == 13 && textBoxCaptura.Text != "" )
+            {
+                if (textBoxCaptura.Text.IndexOf("*")== -1)
+                {
+                    query = "SELECT * FROM productos WHERE Codigo=" + textBoxCaptura.Text;
+                    codigo = textBoxCaptura.Text;
+                    textBoxCodigo.Text = codigo;
+                    cantidad = "1";
+                    textBoxCantidad.Text = cantidad;
+                }
+                else
+                {
+                    string[] cantidad_producto = textBoxCaptura.Text.Split('*');
+                    query = "SELECT * FROM productos WHERE Codigo=" + cantidad_producto[1];
+                    cantidad = cantidad_producto[0];
+                    codigo = cantidad_producto[1];
+                    textBoxCodigo.Text = codigo;
+                    textBoxCantidad.Text = cantidad;
+
+                }
+
+                //conexion bd
+                MySqlConnection mySqlConnection = new MySqlConnection("server = localhost; user=root;database=puntodeventa;");
+                mySqlConnection.Open();
+                MySqlCommand mySqlCommand = new MySqlCommand(query, mySqlConnection);
+                MySqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader();
+
+                //llenar datagrid con base de datos
+
+                while (mySqlDataReader.Read())
+                {
+                    float qty = float.Parse(cantidad);
+                    //cantidad por precio en bd
+                    float totalLinea = qty * mySqlDataReader.GetFloat(3);
+                    float iva_venta = totalLinea * 16/100;
+                    IVA = IVA + iva_venta;
+
+                    dataGridView1.Rows.Add(cantidad, codigo, mySqlDataReader.GetString(2), mySqlDataReader.GetInt16(1), mySqlDataReader.GetFloat(3), string.Format("{0:.##}",totalLinea));
+                }
+
+                textBoxCaptura.Clear();
+                textBoxCaptura.Focus();
+
+                //calculo de total y despliegue en textbox
+
+                total = 0;
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    total += float.Parse(dataGridView1[5,i].Value.ToString());
+                }
+
+                textBoxIVA.Text = "$" + string.Format("{0:.##}", IVA);
+                textBoxTotal.Text = "$" + string.Format("{0:.##}", total);
+            }
+        }
+
+        private void textBoxCaptura_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.P)
+            {
+                float pago = float.Parse(textBoxCaptura.Text.Remove(textBoxCaptura.TextLength - 1));
+
+                textBoxPago.Visible = true;
+                labelPago.Visible = true;
+                textBoxPago.Text = "$" + pago;
+
+                labelCambio.Visible = true;
+                textBoxCambio.Visible = true;
+                textBoxCambio.Text = "$" + (pago - total);
+
+                textBoxCaptura.Focus();
+                textBoxCaptura.Clear();
+
+                //limpiar el datagrid
+                dataGridView1.Rows.Clear();
+
+                buttonGuardarVenta.Focus();
+            }
+        }
+
+        private void buttonGuardarVenta_Click(object sender, EventArgs e)
+        {
+            Invisibles();
+            IVA = 0;
+            total = 0;
+            textBoxCaptura.Focus();
         }
     }
 }
