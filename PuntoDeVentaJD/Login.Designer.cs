@@ -67,7 +67,9 @@
             this.textBoxUser.Name = "textBoxUser";
             this.textBoxUser.Size = new System.Drawing.Size(100, 22);
             this.textBoxUser.TabIndex = 4;
-            this.textBoxUser.Text = "Usuario";
+            this.textBoxUser.Click += new System.EventHandler(this.textBoxUser_Click);
+            this.textBoxUser.TextChanged += new System.EventHandler(this.textBoxUser_TextChanged);
+            this.textBoxUser.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxUser_KeyPress);
             // 
             // textBoxPassword
             // 
@@ -77,7 +79,8 @@
             this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(100, 22);
             this.textBoxPassword.TabIndex = 5;
-            this.textBoxPassword.Text = "Contraseña";
+            this.textBoxPassword.Click += new System.EventHandler(this.textBoxPassword_Click);
+            this.textBoxPassword.TextChanged += new System.EventHandler(this.textBoxPassword_TextChanged);
             // 
             // button1
             // 
@@ -127,6 +130,7 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Punto de Venta";
+            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKey)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCashier)).EndInit();
             this.ResumeLayout(false);

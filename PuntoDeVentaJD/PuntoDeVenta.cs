@@ -23,6 +23,8 @@ namespace PuntoDeVentaJD
 
         private void PuntoDeVenta_Load(object sender, EventArgs e)
         {
+            //colocar nombre del cajero
+            labelCajero.Text = "Cajero:" + Login.nombre;
             Invisibles();
             //diseño superior al datagrid
             panelTitulo.Width = this.Width - 100;
