@@ -107,6 +107,12 @@
     <Compile Include="PuntoDeVenta.Designer.cs">
       <DependentUpon>PuntoDeVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserAdmin.Designer.cs">
+      <DependentUpon>UserAdmin.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +128,9 @@
     </Compile>
     <EmbeddedResource Include="PuntoDeVenta.resx">
       <DependentUpon>PuntoDeVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserAdmin.resx">
+      <DependentUpon>UserAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -163,6 +172,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\iconfinder_minus_1645995 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_Facebook_UI-31_2344305.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_free-27_616650 %282%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

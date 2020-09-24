@@ -73,9 +73,29 @@ namespace PuntoDeVentaJD.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_Facebook_UI_31_2344305 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_Facebook_UI-31_2344305", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconfinder_free_27_616650__1_ {
             get {
                 object obj = ResourceManager.GetObject("iconfinder_free-27_616650 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_free_27_616650__2_ {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_free-27_616650 (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
