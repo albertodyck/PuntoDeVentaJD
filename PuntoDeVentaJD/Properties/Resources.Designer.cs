@@ -83,6 +83,16 @@ namespace PuntoDeVentaJD.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_broom_clean_service_labor_website_4622511 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_broom_clean_service_labor_website_4622511", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconfinder_Facebook_UI_31_2344305 {
             get {
                 object obj = ResourceManager.GetObject("iconfinder_Facebook_UI-31_2344305", resourceCulture);
@@ -156,6 +166,16 @@ namespace PuntoDeVentaJD.Properties {
         internal static System.Drawing.Bitmap iconfinder_Save_1493294 {
             get {
                 object obj = ResourceManager.GetObject("iconfinder_Save_1493294", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_Save_1493294__1_ {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_Save_1493294 (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

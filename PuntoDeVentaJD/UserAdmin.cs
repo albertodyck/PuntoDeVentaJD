@@ -17,6 +17,14 @@ namespace PuntoDeVentaJD
         public UserAdmin()
         {
             InitializeComponent();
+            this.toolTipMensaje.SetToolTip(this.textBoxUsuarioId, "Ingrese el Numero de Usuario");
+            this.toolTipMensaje.SetToolTip(this.textBoxNombre, "Ingrese el Nombre del Usuario");
+            this.toolTipMensaje.SetToolTip(this.textBoxContraseña, "Ingrese la Contraseña para el usuario");
+            this.toolTipMensaje.SetToolTip(this.textBoxCorreo, "Ingrese el correo electronico del Usuario, este sera el nombre para hacer el login");
+            this.toolTipMensaje.SetToolTip(this.buttonAgregar, "Agrega el Usuario Nuevo en la base de datos");
+            this.toolTipMensaje.SetToolTip(this.buttonBorrar, "Elimina el usuario seleccionado y presente en el formulario");
+            this.toolTipMensaje.SetToolTip(this.buttonGuardarEdicion, "Guarda los datos capturados en el formulario, teclee la contraseña siempre");
+            this.toolTipMensaje.SetToolTip(this.buttonLimpiar, "Vacia el formulario dejando los campos en blanco");
         }
 
         private void UserAdmin_Load(object sender, EventArgs e)
@@ -75,9 +83,50 @@ namespace PuntoDeVentaJD
             }
         }
 
+        private void dataGridViewUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBoxUsuarioId.Text = dataGridViewUsuarios[0, e.RowIndex].Value.ToString();
+            textBoxNombre.Text = dataGridViewUsuarios[1, e.RowIndex].Value.ToString();
+            textBoxContraseña.Text = dataGridViewUsuarios[2, e.RowIndex].Value.ToString();
+            textBoxCorreo.Text = dataGridViewUsuarios[3, e.RowIndex].Value.ToString();
+        }
+
         private void buttonBorrar_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Esta seguro que desea eliminar el Usuario: " + textBoxNombre.Text, "Advertencia", MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+            {
+                string queryEliminar = "DELETE FROM usuarios WHERE usuarioId = '" + textBoxUsuarioId.Text + "'";
+                //MessageBox.Show(queryEliminar);
 
+                MySqlConnection mySqlConnection = new MySqlConnection("server = localhost; user=root;database=puntodeventa;");
+                mySqlConnection.Open();
+                MySqlCommand mySqlCommand = new MySqlCommand(queryEliminar, mySqlConnection);
+                mySqlCommand.ExecuteNonQuery();
+
+                //actualizar el datagrid
+                BorrarFormulario();
+                UserAdmin_Load(sender, e);
+            }
+        }
+
+        private void buttonGuardarEdicion_Click(object sender, EventArgs e)
+        {
+            string queryActualizar = "UPDATE usuarios SET usuarioNombre = '" + textBoxNombre.Text + "', UsuarioPassword = SHA2('" + textBoxContraseña.Text + "',256), usuarioCorreo = '" + textBoxCorreo.Text + "' WHERE usuarioId = '" + textBoxUsuarioId.Text + "'";
+            MessageBox.Show(queryActualizar);
+
+            MySqlConnection mySqlConnection = new MySqlConnection("server = localhost; user=root;database=puntodeventa;");
+            mySqlConnection.Open();
+            MySqlCommand mySqlCommand = new MySqlCommand(queryActualizar, mySqlConnection);
+            mySqlCommand.ExecuteNonQuery();
+
+            //actualizar el datagrid
+            BorrarFormulario();
+            UserAdmin_Load(sender, e);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            BorrarFormulario();
         }
 
 
@@ -167,5 +216,12 @@ namespace PuntoDeVentaJD
         {
             MostrarEtiquetaError(textBoxCorreo, labelErrorCorreo);
         }
+
+        private void dataGridViewUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+
     }
 }

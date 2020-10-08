@@ -191,5 +191,11 @@
   <ItemGroup>
     <None Include="Resources\iconfinder_040_95876.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_Save_1493294 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_broom_clean_service_labor_website_4622511.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
