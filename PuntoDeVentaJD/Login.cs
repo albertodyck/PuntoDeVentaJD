@@ -49,7 +49,7 @@ namespace PuntoDeVentaJD
                     nombre = mySqlDataReader.GetString(1);
 
                     this.Hide();
-                    new PuntoDeVenta().ShowDialog();
+                    new Menu().ShowDialog();
                     this.Show();
                 }
                 else

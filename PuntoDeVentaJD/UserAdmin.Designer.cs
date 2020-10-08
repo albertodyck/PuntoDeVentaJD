@@ -273,7 +273,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridViewUsuarios);
             this.Name = "UserAdmin";
-            this.Text = "UserAdmin";
+            this.Text = "Modulo de Administracion de Usuarios";
             this.Load += new System.EventHandler(this.UserAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsuarios)).EndInit();
             this.panel1.ResumeLayout(false);
