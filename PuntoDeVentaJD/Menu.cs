@@ -15,6 +15,10 @@ namespace PuntoDeVentaJD
         public Menu()
         {
             InitializeComponent();
+            //this.toolTipMensaje.SetToolTip(this.buttonAgregar, "Agrega el Usuario Nuevo en la base de datos")
+            this.toolTipMenu.SetToolTip(this.buttonPuntoVenta, "Ejecuta el Punto de venta en Modo de Pantalla Completa");
+            this.toolTipMenu.SetToolTip(this.buttonUserAdmin, "Ejecuta el Modulo de administracion de Usuarios, para Agregar, Editar o Eliminar");
+            this.toolTipMenu.SetToolTip(this.buttonProductAdmin, "Ejecuta la Administracion web de Productos, requiere autenticacion");
         }
 
         private void timer1_Tick(object sender, EventArgs e)

@@ -39,9 +39,10 @@
             this.labelFechaHora = new System.Windows.Forms.Label();
             this.labelCajero = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonPuntoVenta = new System.Windows.Forms.Button();
-            this.buttonUserAdmin = new System.Windows.Forms.Button();
             this.buttonProductAdmin = new System.Windows.Forms.Button();
+            this.buttonUserAdmin = new System.Windows.Forms.Button();
+            this.buttonPuntoVenta = new System.Windows.Forms.Button();
+            this.toolTipMenu = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -131,20 +132,19 @@
             this.panel1.Size = new System.Drawing.Size(427, 100);
             this.panel1.TabIndex = 11;
             // 
-            // buttonPuntoVenta
+            // buttonProductAdmin
             // 
-            this.buttonPuntoVenta.BackgroundImage = global::PuntoDeVentaJD.Properties.Resources.iconfinder_24_Cash_Register_2924837;
-            this.buttonPuntoVenta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonPuntoVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPuntoVenta.ForeColor = System.Drawing.Color.Blue;
-            this.buttonPuntoVenta.Location = new System.Drawing.Point(18, 37);
-            this.buttonPuntoVenta.Name = "buttonPuntoVenta";
-            this.buttonPuntoVenta.Size = new System.Drawing.Size(110, 165);
-            this.buttonPuntoVenta.TabIndex = 12;
-            this.buttonPuntoVenta.Text = "Punto de Venta";
-            this.buttonPuntoVenta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonPuntoVenta.UseVisualStyleBackColor = true;
-            this.buttonPuntoVenta.Click += new System.EventHandler(this.buttonPuntoVenta_Click);
+            this.buttonProductAdmin.BackgroundImage = global::PuntoDeVentaJD.Properties.Resources.iconfinder_040_95876;
+            this.buttonProductAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonProductAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonProductAdmin.ForeColor = System.Drawing.Color.Blue;
+            this.buttonProductAdmin.Location = new System.Drawing.Point(329, 37);
+            this.buttonProductAdmin.Name = "buttonProductAdmin";
+            this.buttonProductAdmin.Size = new System.Drawing.Size(110, 165);
+            this.buttonProductAdmin.TabIndex = 14;
+            this.buttonProductAdmin.Text = "Administracion de Productos";
+            this.buttonProductAdmin.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonProductAdmin.UseVisualStyleBackColor = true;
             // 
             // buttonUserAdmin
             // 
@@ -161,19 +161,24 @@
             this.buttonUserAdmin.UseVisualStyleBackColor = true;
             this.buttonUserAdmin.Click += new System.EventHandler(this.buttonUserAdmin_Click);
             // 
-            // buttonProductAdmin
+            // buttonPuntoVenta
             // 
-            this.buttonProductAdmin.BackgroundImage = global::PuntoDeVentaJD.Properties.Resources.iconfinder_040_95876;
-            this.buttonProductAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonProductAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonProductAdmin.ForeColor = System.Drawing.Color.Blue;
-            this.buttonProductAdmin.Location = new System.Drawing.Point(329, 37);
-            this.buttonProductAdmin.Name = "buttonProductAdmin";
-            this.buttonProductAdmin.Size = new System.Drawing.Size(110, 165);
-            this.buttonProductAdmin.TabIndex = 14;
-            this.buttonProductAdmin.Text = "Administracion de Productos";
-            this.buttonProductAdmin.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonProductAdmin.UseVisualStyleBackColor = true;
+            this.buttonPuntoVenta.BackgroundImage = global::PuntoDeVentaJD.Properties.Resources.iconfinder_24_Cash_Register_2924837;
+            this.buttonPuntoVenta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonPuntoVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPuntoVenta.ForeColor = System.Drawing.Color.Blue;
+            this.buttonPuntoVenta.Location = new System.Drawing.Point(18, 37);
+            this.buttonPuntoVenta.Name = "buttonPuntoVenta";
+            this.buttonPuntoVenta.Size = new System.Drawing.Size(110, 165);
+            this.buttonPuntoVenta.TabIndex = 12;
+            this.buttonPuntoVenta.Text = "Punto de Venta";
+            this.buttonPuntoVenta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonPuntoVenta.UseVisualStyleBackColor = true;
+            this.buttonPuntoVenta.Click += new System.EventHandler(this.buttonPuntoVenta_Click);
+            // 
+            // toolTipMenu
+            // 
+            this.toolTipMenu.IsBalloon = true;
             // 
             // Menu
             // 
@@ -188,6 +193,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Principal de Administracion de Punto de  Venta";
             this.Load += new System.EventHandler(this.Menu_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -214,5 +220,6 @@
         private System.Windows.Forms.Button buttonPuntoVenta;
         private System.Windows.Forms.Button buttonUserAdmin;
         private System.Windows.Forms.Button buttonProductAdmin;
+        private System.Windows.Forms.ToolTip toolTipMenu;
     }
 }

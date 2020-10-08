@@ -17,6 +17,9 @@ namespace PuntoDeVentaJD
         public Login()
         {
             InitializeComponent();
+            //this.toolTipMensaje.SetToolTip(this.buttonAgregar, "Agrega el Usuario Nuevo en la base de datos")
+            this.toolTipLogin.SetToolTip(this.textBoxUser, "Teclee el correo registrado para el Usuario de sistema");
+            this.toolTipLogin.SetToolTip(this.textBoxPassword, "Teclee la contraseña");
         }
 
         private void button1_Click(object sender, EventArgs e)

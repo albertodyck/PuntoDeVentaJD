@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelLogin = new System.Windows.Forms.Label();
             this.labelInstrucciones = new System.Windows.Forms.Label();
             this.textBoxUser = new System.Windows.Forms.TextBox();
@@ -35,6 +36,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBoxKey = new System.Windows.Forms.PictureBox();
             this.pictureBoxCashier = new System.Windows.Forms.PictureBox();
+            this.toolTipLogin = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKey)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCashier)).BeginInit();
             this.SuspendLayout();
@@ -114,6 +116,10 @@
             this.pictureBoxCashier.TabIndex = 2;
             this.pictureBoxCashier.TabStop = false;
             // 
+            // toolTipLogin
+            // 
+            this.toolTipLogin.IsBalloon = true;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -147,6 +153,7 @@
         private System.Windows.Forms.TextBox textBoxUser;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolTip toolTipLogin;
     }
 }
 
