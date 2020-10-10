@@ -58,5 +58,11 @@ namespace PuntoDeVentaJD
             new UserAdmin().ShowDialog();
             this.Show();
         }
+
+        private void buttonProductAdmin_Click(object sender, EventArgs e)
+        {
+            //accion en boton abre un navegador chrome en la pagina del segundo argumento
+            System.Diagnostics.Process.Start("chrome.exe", "http://localhost/puntodeventa/");
+        }
     }
 }

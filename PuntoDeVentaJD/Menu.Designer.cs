@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.puntoDeVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.administraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ejecutarPuntoDeVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moduloDeAdministracionDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administracionDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -67,6 +67,13 @@
             this.puntoDeVentaToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
             this.puntoDeVentaToolStripMenuItem.Text = "Punto de Venta";
             // 
+            // ejecutarPuntoDeVentaToolStripMenuItem
+            // 
+            this.ejecutarPuntoDeVentaToolStripMenuItem.Name = "ejecutarPuntoDeVentaToolStripMenuItem";
+            this.ejecutarPuntoDeVentaToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.ejecutarPuntoDeVentaToolStripMenuItem.Text = "Ejecutar punto de venta";
+            this.ejecutarPuntoDeVentaToolStripMenuItem.Click += new System.EventHandler(this.ejecutarPuntoDeVentaToolStripMenuItem_Click);
+            // 
             // administraciónToolStripMenuItem
             // 
             this.administraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -74,13 +81,6 @@
             this.administraciónToolStripMenuItem.Name = "administraciónToolStripMenuItem";
             this.administraciónToolStripMenuItem.Size = new System.Drawing.Size(164, 20);
             this.administraciónToolStripMenuItem.Text = "Administración de Usuarios";
-            // 
-            // ejecutarPuntoDeVentaToolStripMenuItem
-            // 
-            this.ejecutarPuntoDeVentaToolStripMenuItem.Name = "ejecutarPuntoDeVentaToolStripMenuItem";
-            this.ejecutarPuntoDeVentaToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-            this.ejecutarPuntoDeVentaToolStripMenuItem.Text = "Ejecutar punto de venta";
-            this.ejecutarPuntoDeVentaToolStripMenuItem.Click += new System.EventHandler(this.ejecutarPuntoDeVentaToolStripMenuItem_Click);
             // 
             // moduloDeAdministracionDeUsuariosToolStripMenuItem
             // 
@@ -145,6 +145,7 @@
             this.buttonProductAdmin.Text = "Administracion de Productos";
             this.buttonProductAdmin.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonProductAdmin.UseVisualStyleBackColor = true;
+            this.buttonProductAdmin.Click += new System.EventHandler(this.buttonProductAdmin_Click);
             // 
             // buttonUserAdmin
             // 
