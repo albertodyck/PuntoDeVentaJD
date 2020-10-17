@@ -43,6 +43,7 @@
             this.buttonUserAdmin = new System.Windows.Forms.Button();
             this.buttonPuntoVenta = new System.Windows.Forms.Button();
             this.toolTipMenu = new System.Windows.Forms.ToolTip(this.components);
+            this.ejecutarWebToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -91,6 +92,8 @@
             // 
             // administracionDeProductosToolStripMenuItem
             // 
+            this.administracionDeProductosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ejecutarWebToolStripMenuItem});
             this.administracionDeProductosToolStripMenuItem.Name = "administracionDeProductosToolStripMenuItem";
             this.administracionDeProductosToolStripMenuItem.Size = new System.Drawing.Size(173, 20);
             this.administracionDeProductosToolStripMenuItem.Text = "Administracion de productos";
@@ -181,6 +184,13 @@
             // 
             this.toolTipMenu.IsBalloon = true;
             // 
+            // ejecutarWebToolStripMenuItem
+            // 
+            this.ejecutarWebToolStripMenuItem.Name = "ejecutarWebToolStripMenuItem";
+            this.ejecutarWebToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ejecutarWebToolStripMenuItem.Text = "Ejecutar Web";
+            this.ejecutarWebToolStripMenuItem.Click += new System.EventHandler(this.ejecutarWebToolStripMenuItem_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,5 +232,6 @@
         private System.Windows.Forms.Button buttonUserAdmin;
         private System.Windows.Forms.Button buttonProductAdmin;
         private System.Windows.Forms.ToolTip toolTipMenu;
+        private System.Windows.Forms.ToolStripMenuItem ejecutarWebToolStripMenuItem;
     }
 }

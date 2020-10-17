@@ -64,5 +64,11 @@ namespace PuntoDeVentaJD
             //accion en boton abre un navegador chrome en la pagina del segundo argumento
             System.Diagnostics.Process.Start("chrome.exe", "http://localhost/puntodeventa/");
         }
+
+        private void ejecutarWebToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //accion en boton abre un navegador chrome en la pagina del segundo argumento
+            System.Diagnostics.Process.Start("chrome.exe", "http://localhost/puntodeventa/");
+        }
     }
 }
