@@ -112,7 +112,7 @@ namespace PuntoDeVentaJD
         private void buttonGuardarEdicion_Click(object sender, EventArgs e)
         {
             string queryActualizar = "UPDATE usuarios SET usuarioNombre = '" + textBoxNombre.Text + "', UsuarioPassword = SHA2('" + textBoxContraseña.Text + "',256), usuarioCorreo = '" + textBoxCorreo.Text + "' WHERE usuarioId = '" + textBoxUsuarioId.Text + "'";
-            MessageBox.Show(queryActualizar);
+            //MessageBox.Show(queryActualizar);
 
             MySqlConnection mySqlConnection = new MySqlConnection("server = localhost; user=root;database=puntodeventa;");
             mySqlConnection.Open();
